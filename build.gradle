@@ -50,6 +50,10 @@ dependencies {
      //compile group: 'org.springframework', name: 'spring-orm', version: '5.0.4.RELEASE'; //Spring-ORM
      //compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.3.0.RELEASE'; //outh2
 	 //compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.5'; //Apache HttpClient
+	//compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.16.Final'
+	compile group: 'nl.topicus', name: 'spanner-hibernate', version: '0.6' //Spanner hibernate
+	//compile group: 'nl.topicus', name: 'spanner-jdbc', version: '0.26' // Spanner JDBC
+	compile group: 'com.fasterxml.uuid', name: 'java-uuid-generator', version: '3.1.5' //uuid generator
 	
      testCompile('org.springframework.boot:spring-boot-starter-test')
      testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
