@@ -12,6 +12,7 @@
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
+        classpath "mysql:mysql-connector-java:6.0.6"
     }
 }
  
@@ -39,12 +40,14 @@ dependencies {
      compile("org.springframework.boot:spring-boot-starter-web")
      compile("org.springframework.boot:spring-boot-starter-actuator")
      compile('org.springframework.boot:spring-boot-starter-data-jpa') //JPA
-     compile("com.h2database:h2")
+     //compile("com.h2database:h2")
+     compile("org.springframework.boot:spring-boot-devtools")
      compile('org.springframework.boot:spring-boot-starter-data-rest')
      compile group: 'javax.xml.parsers', name: 'jaxp-api', version: '1.4.5';
      compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5';
+     //compile 'com.google.code.gson:gson:2.2.4'
      
-     //compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'; //MySQL
+     compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'; //MySQL
      compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.0.RELEASE'; //Thymeleaf
      compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.0.RELEASE';  //TOmcat
      //compile group: 'org.springframework', name: 'spring-orm', version: '5.0.4.RELEASE'; //Spring-ORM
