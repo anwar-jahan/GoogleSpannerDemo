@@ -16,43 +16,37 @@ import com.main.anwar.endpoint.service.DoorRepository;
 
 @SpringBootApplication
 public class Application {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-/*
-	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-		return args -> {
+	/*
+	 * @Bean public CommandLineRunner commandLineRunner(ApplicationContext ctx)
+	 * { return args -> {
+	 * 
+	 * System.out.println("Let's inspect the beans provided by Spring Boot:");
+	 * 
+	 * String[] beanNames = ctx.getBeanDefinitionNames();
+	 * Arrays.sort(beanNames); int count = 0; for (String beanName : beanNames)
+	 * { System.out.println(++count+":"+beanName); }
+	 * 
+	 * }; }
+	 */
 
-			System.out.println("Let's inspect the beans provided by Spring Boot:");
-
-			String[] beanNames = ctx.getBeanDefinitionNames();
-			Arrays.sort(beanNames);
-			int count = 0;
-			for (String beanName : beanNames) {
-				System.out.println(++count+":"+beanName);
-			}
-
-		};
-	}*/
-	
 	@Bean
 	public CommandLineRunner commandLineRunner(DoorRepository repository) {
 		return (args) -> {
-			// save a couple of customers
-			repository.save(new Door("North"));
-			repository.save(new Door("South"));
-			repository.save(new Door("East"));
-			repository.save(new Door("West"));
+			Door door = new Door("North");
+			door.onCreate();
 
+			repository.save(door);
 			// fetch all customers
 			log.info("Doors found with findAll():");
 			log.info("-------------------------------");
-			for (Door door : repository.findAll()) {
-				log.info(door.toString());
+			for (Door d : repository.findAll()) {
+				log.info(d.toString());
 			}
 		};
 	}

@@ -27,15 +27,14 @@ public class HomeController {
 		return "Greetings from Spring Boot!";
 	}
 
-	@RequestMapping(value = "/addDoor", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "/api/addDoor", method = {RequestMethod.POST, RequestMethod.GET})
 	@ResponseBody
-	public String addDoor(@RequestParam("name") String name) {
+	public Door addDoor(@RequestParam("name") String name) {
 		log.info("Start: add method.");
-		doorRepository.save(new Door(name));
-		return "save";
+		return doorRepository.save(new Door(name));
 	}
 	
-	@RequestMapping(value="/getAllDoor", method=RequestMethod.GET)
+	@RequestMapping(value="/api/getAllDoors", method=RequestMethod.GET)
 	@ResponseBody
 	public List<Door> getAllDoor() {
 		log.info("Start: get All Door.");
