@@ -1,0 +1,28 @@
+apiVersion: v1beta1
+kind: Deployment
+metadata:
+  name: doorappsdeploy
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: doorappsdeploy
+      spec:
+        containers:
+       - name: doorappsdeploy
+        image:gcr.io/doorapi-200221/doorappsdeploy:v1
+        imagePullPolicy: Always
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: doorapps-load-balancer
+spec:
+  selector:
+    app: doorappsdeploy
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+   type: LoadBalancer
