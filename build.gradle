@@ -39,29 +39,28 @@ targetCompatibility = 1.8
 dependencies {
      compile("org.springframework.boot:spring-boot-starter-web")
      compile("org.springframework.boot:spring-boot-starter-actuator")
-     compile('org.springframework.boot:spring-boot-starter-data-jpa') //JPA
-     //compile("com.h2database:h2")
+     compile('org.springframework.boot:spring-boot-starter-data-jpa')
+     compile('com.google.cloud:google-cloud-spanner:0.32.0-beta')
      compile("org.springframework.boot:spring-boot-devtools")
      compile('org.springframework.boot:spring-boot-starter-data-rest')
      compile group: 'javax.xml.parsers', name: 'jaxp-api', version: '1.4.5';
      compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5';
-     //compile 'com.google.code.gson:gson:2.2.4'
-     
-     compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'; //MySQL
-     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.0.RELEASE'; //Thymeleaf
-     compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.0.RELEASE';  //TOmcat
-     //compile group: 'org.springframework', name: 'spring-orm', version: '5.0.4.RELEASE'; //Spring-ORM
-     //compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.3.0.RELEASE'; //outh2
-	 //compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.5'; //Apache HttpClient
-	//compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.16.Final'
-	compile group: 'nl.topicus', name: 'spanner-hibernate', version: '0.6' //Spanner hibernate
-	//compile group: 'nl.topicus', name: 'spanner-jdbc', version: '0.26' // Spanner JDBC
-	compile group: 'com.fasterxml.uuid', name: 'java-uuid-generator', version: '3.1.5' //uuid generator
+     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.0.RELEASE';
+     compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.0.RELEASE';
+	 compile group: 'nl.topicus', name: 'spanner-hibernate', version: '0.6'
+	 compile group: 'nl.topicus', name: 'spanner-jdbc', version: '0.26'
+	 compile group: 'com.fasterxml.uuid', name: 'java-uuid-generator', version: '3.1.5'
 	
      testCompile('org.springframework.boot:spring-boot-starter-test')
      testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
-     //testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0';
-     
+    //testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0';
+    //compile group: 'org.springframework', name: 'spring-orm', version: '5.0.4.RELEASE'; //Spring-ORM
+    //compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.3.0.RELEASE'; //outh2
+	//compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.5'; //Apache HttpClient
+	//compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.16.Final'
+     //compile("com.h2database:h2")
+     //compile 'com.google.code.gson:gson:2.2.4'
+     //compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6';
      testCompile("junit:junit")
 }
 

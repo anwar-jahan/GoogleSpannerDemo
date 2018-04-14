@@ -20,7 +20,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
+/*	@Bean
 	public CommandLineRunner commandLineRunner(DoorRepository repository) {
 		return (args) -> {
 			Door door = new Door("North");
@@ -34,5 +34,5 @@ public class Application {
 				log.info(d.toString());
 			}
 		};
-	}
+	}*/
 }
