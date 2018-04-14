@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: doorappsdeploy
@@ -8,11 +8,11 @@ spec:
     metadata:
       labels:
         app: doorappsdeploy
-      spec:
-        containers:
-        - name: doorappsdeploy
-          image: gcr.io/doorapi-200221/doorappsdeploy:v2
-          imagePullPolicy: Always
+    spec:
+      containers:
+      - name: doorappsdeploy
+        image: gcr.io/doorapi-200221/doorappsdeploy:v2
+        imagePullPolicy: Always
 ---
 kind: Service
 apiVersion: v1

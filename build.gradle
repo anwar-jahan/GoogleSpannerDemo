@@ -12,7 +12,6 @@
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
-        classpath "mysql:mysql-connector-java:6.0.6"
     }
 }
  
@@ -45,6 +44,7 @@ dependencies {
      compile('org.springframework.boot:spring-boot-starter-data-rest')
      compile group: 'javax.xml.parsers', name: 'jaxp-api', version: '1.4.5';
      compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5';
+
      compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.0.RELEASE';
      compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.0.RELEASE';
 	 compile group: 'nl.topicus', name: 'spanner-hibernate', version: '0.6'
@@ -61,6 +61,16 @@ dependencies {
      //compile("com.h2database:h2")
      //compile 'com.google.code.gson:gson:2.2.4'
      //compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6';
+
+     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.0.RELEASE'
+     compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.0.RELEASE'
+     compile group: 'nl.topicus', name: 'spanner-hibernate', version: '0.6'
+     compile group: 'nl.topicus', name: 'spanner-jdbc', version: '0.26'
+     compile group: 'com.fasterxml.uuid', name: 'java-uuid-generator', version: '3.1.5'
+	
+     testCompile('org.springframework.boot:spring-boot-starter-test')
+     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+
      testCompile("junit:junit")
 }
 
